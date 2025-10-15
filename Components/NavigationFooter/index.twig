@@ -1,0 +1,12 @@
+<flynt-component load:on="visible" name="NavigationFooter" class="">
+  <div class="w-full boxed flex-row justify-between items-center">    
+    {% if menu %}
+      <nav 
+        class="navigation w-full flex justify-between items-center" 
+        aria-label="{{ labels.ariaLabel }}">
+        {% include 'Partials/_menu.twig' with { 'items': menu.get_items, 'level': '0', 'maxLevel': maxLevel } only %}
+      </nav>
+    {% endif %}
+    {# {% include 'Partials/_backtotop.twig' %} #}
+  </div>
+</flynt-component>

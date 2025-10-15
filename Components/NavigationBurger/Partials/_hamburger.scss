@@ -1,0 +1,9 @@
+.hamburger {
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+&[data-status='menuIsOpen'] {
+  @apply rotate-180;
+}

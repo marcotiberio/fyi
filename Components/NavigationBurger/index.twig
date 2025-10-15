@@ -1,0 +1,46 @@
+<flynt-component load:on="idle" name="NavigationBurger" class="flex justify-between items-center w-full">
+  <nav aria-label="{{ labels.ariaLabel|e }}" class="h-full w-full">
+    <div class="w-[350px] h-fit p-sm mx-auto bg-black flex flex-row justify-between gap-sm items-center relative z-[1002]">
+      {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
+      <div class="flex flex-row gap-[10px] align-middle items-center">
+        {% if menu %}
+          {% include 'Partials/_icon_open-menu.twig' with { 'labels': labels } only %}
+          {% include 'Partials/_icon_close-menu.twig' with { 'labels': labels } only %}
+        {% endif %}
+      </div>
+    </div>
+    {% if menu %}
+      <ul
+        data-ref="menu" 
+        class="menu"
+        {# style="background-color: {% if post.pageBackground %}{{ post.pageBackground }}{% else %}var(--black){% endif %};" #}
+        >
+        <div class="p-sm !w-[350px] mx-auto bg-black">
+          {% for item in menu.items %}
+            {% if not item.children %}
+              <li class="w-fit font-sans uppercase item flex justify-start items-center transition-all duration-200 ease-in-out hover:ml-sm {{- item.current ? ' ml-sm' }}">
+                <a class="link font-h3 !text-white" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                  {{ item.title }}
+                </a>
+              </li>
+            {% endif %}
+            {% if item.children %}
+              <li class="w-fit font-sans uppercase item flex justify-start items-center open-submenu transition-all duration-200 ease-in-out hover:ml-sm {{- item.current ? ' ml-sm' }}" >
+                <div class="link font-h3 text-white">
+                  {{ item.title }}
+                </div>
+                <ul class="submenu">
+                  {% for subitem in item.children %}
+                    <li class="w-fit font-sans uppercase item flex justify-start items-center transition-all duration-200 ease-in-out hover:ml-sm {{- subitem.current ? ' ml-sm' }}">
+                      <a class="link font-h3 text-white" href="{{ subitem.link }}">{{ subitem.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </ul>
+    {% endif %}
+  </nav>
+</flynt-component>

@@ -1,0 +1,75 @@
+<flynt-component load:on="visible" name="HeroImageText" class="{% if image or oembed %}-mb-[70px] mt-0 sm:-mb-[85px] md:-mb-[100px]{% else %}-mb-sm -mt-sm sm:-mb-md sm:-mt-md md:-mb-lg md:-mt-lg{% endif %}">
+  <div class="wrapper w-full mx-auto py-sm sm:py-md md:py-lg">
+    {# {% if headlineTitle %}
+      <h2 class="max-w-screen-md mx-auto flex justify-center items-center text-center text-yellow uppercase">{{ headlineTitle }}</h2>
+    {% endif %} #}
+    <div class="flex flex-col items-center justify-between">
+      <div class="relative z-20 w-full h-full">
+        {# {% if image %}
+          <img class="lazyload h-full w-full object-cover px-sm md:px-lg"
+            src="{{ image.src | resize(32) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+            data-sizes="auto"
+            alt="{{ image.alt|e }}">
+        {% endif %} #}
+        {% if oembed %}
+          <div class="video">
+            <figure data-ref="posterImage" class="figure">
+              <img class="lazyload h-full w-full object-cover px-sm md:px-lg"
+              src="{{ image.src | resize(32) }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+              data-sizes="auto"
+              alt="{{ image.alt|e }}">
+            </figure>
+            <div data-ref="videoPlayer" class="video-player">
+              {{ oembed }}
+              <div class="video-loader"></div>
+              <button data-ref="playButton" class="video-playButton" type="button" aria-label="Play Video"></button>
+            </div>
+          </div>
+          {# <video controls playsinline>
+            <source type="video/mp4" src="{{ video }}">
+          </video> #}
+        {% endif %}
+      </div>
+      <div 
+        class="relative z-10 w-full h-full {% if image or oembed %}pt-[75px] -translate-y-[50px] sm:-translate-y-[50px]{% else %}pt-sm sm:pt-lg{% endif %} pb-lg flex flex-col justify-between items-center gap-sm"
+        style="background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}var(--yellow){% endif %}; "
+        >
+        {% if title %}
+          <div class="font-h2 text-center">{{ title }}</div>
+        {% endif %}
+        {% if contentHtml %}
+          <div class="max-w-[450px] mx-auto py-0 px-sm md:py-md">{{ contentHtml|e('wp_kses_post') }}</div>
+        {% endif %}
+        {% if buttonLink %}
+          <div class="w-full flex justify-center items-center">
+            <a 
+              class="button button--outline" 
+              href="{{ buttonLink.url }}" 
+              {% if buttonLink.target %} target="{{ buttonLink.target }}" rel="noreferrer noopener"{% endif %}>
+              {{ buttonLink.title }}
+            </a>
+          </div>
+        {% endif %}
+        {% if openButtonText %}
+          <div class="flex flex-col justify-center items-center">
+            <div class="button button--outline" id="showcontactFormWrapper">
+              {{ openButtonText }}
+            </div>
+            <div class="contactFormWrapper flex justify-center items-center" id="contactFormWrapper">
+              <div 
+                class="contactFormContainer w-full h-full flex flex-col justify-center items-center p-xs md:p-sm lg:p-xl z-[9999]"
+                style="background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}var(--yellow){% endif %}; ">
+                <div class="w-full lg:w-4/5 h-full mx-auto p-md my-auto">{{ contactForm }}</div>
+                <div class="px-md flex flex-row justify-end items-center">
+                  <div class="button button--outline" id="hidecontactFormWrapper">{{ closeButtonText }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</flynt-component>

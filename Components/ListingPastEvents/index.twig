@@ -1,0 +1,209 @@
+{% if posts|length > 0 %}
+  <flynt-component 
+    load:on="visible" 
+    name="ListingPastEvents" 
+    class="pb-xl"
+    style="
+      color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hash = window.location.hash;
+        if (hash) {
+          const slug = hash.replace('#', '');
+          const events = document.querySelectorAll('[data-event-slug]');
+          events.forEach(function(event) {
+            if (event.dataset.eventSlug === slug) {
+              const button = event.querySelector('button');
+              if (button) {
+                button.click();
+              }
+            }
+          });
+        }
+      });
+    </script>
+    <div class="!p-0">
+      {% if preContentHtml %}
+        <div class="boxed !py-md grid grid-cols-12 gap-x-xs">
+          <span class="font-h3 col-start-3 col-span-9">{{ preContentHtml }}</span>
+        </div>
+      {% endif %}
+      <div class="flex flex-col">
+        {% for post in posts %}
+          <div 
+            class="post boxed w-full h-full"
+            {# href="{{ post.link }}" 
+            aria-label="{{ post.title }}" #}
+            x-data="{ 
+              open: false,
+              toggleEvent() {
+                this.open = !this.open;
+                if (this.open && '{{ post.slug }}') {
+                  const url = new URL(window.location);
+                  url.hash = '{{ post.slug }}';
+                  window.history.pushState(null, '', url);
+                } else if (!this.open && '{{ post.slug }}') {
+                  const url = new URL(window.location);
+                  url.hash = '';
+                  window.history.pushState(null, '', url);
+                }
+              }
+            }"
+            :class="{ 'open': open }"
+            style="
+              {% if post.pageBackground %}
+                background:{{post.pageBackground }}cc;
+                --bgColor:{{post.pageBackground }}cc;
+              {% endif %}
+              {% if post.colorText %}
+                color:{{ post.colorText }};
+                --textColor:{{post.colorText }};
+              {% endif %}"
+            data-event-slug="{{ post.slug }}">
+            <div x-cloak class="flex flex-col gap-md">
+              <div class="w-full h-full flex flex-col gap-xs md:grid md:grid-cols-12 gap-x-xs">
+                <div class="col-start-1 col-end-3">
+                  {# {% if post.end_date %}<span>{{ post.end_date|date("d") }}<br>{{ post.end_date|date("m") }}<br>{{ post.end_date|date("y") }}</span>{% endif %} #}
+                  <span class="font-h3">{{ post.end_date|date("d.m.y")|escape('wp_kses_post') }}</span>
+                </div>
+
+                <div class="col-start-3 col-end-10">
+                  <button @click="toggleEvent()" class="w-fit font-h3" type="button">{{ post.title }}</button>
+                </div>
+                <div class="col-start-10 col-end-13 flex flex-row gap-xs justify-end">
+                  <button @click="toggleEvent()" class="button button--outline" type="button">Details</button>
+                  {# {% if post.ticketsLinkUrl %}
+                    <a 
+                      class="button button--outline" 
+                      href="{{ post.ticketsLinkUrl }}" 
+                      target="_blank" rel="noreferrer noopener">
+                      {{ post.ticketsLinkTitle }}
+                    </a>
+                  {% endif %} #}
+                </div>
+              </div>
+              <div 
+                x-show="open" 
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="flex flex-col-reverse lg:grid lg:grid-cols-12 pb-sm" 
+                aria-hidden="true" 
+                id="content-{{ loop.index }}">
+                <div class="col-start-1 col-span-6 lg:pr-lg">
+                  {{ post.mainText|e('wp_kses_post') }}
+                  <div class="flex flex-col mt-lg">
+                    {% if post.fuerFansVon %}
+                      <div class="flex flex-col">
+                        <div class="font-body uppercase !mb-0">{{ post.labelFuerFansVon }}</div>
+                        <div class="font-body !mb-0">{{ post.fuerFansVon }}</div>
+                      </div>
+                    {% endif %}
+                    {% if post.location %}
+                      <div class="flex flex-col">
+                        <div class="font-body uppercase !mb-0">{{ post.labelLocation }}</div>
+                        <div class="font-body !mb-0">{{ post.location }}</div>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="flex flex-row flex-wrap justify-start gap-xs mt-md">
+                    {% if post.socialmediaRepeater %}
+                      {% for socialMedia in post.socialmediaRepeater %}
+                        <a 
+                          class="button button--outline" 
+                          href="{{ socialMedia.socialmediaLink }}" 
+                          target="_blank" 
+                          rel="noreferrer noopener"
+                          aria-label="{{ socialMedia.socialmediaTitle }}">
+                          {{ socialMedia.socialmediaTitle }}
+                        </a>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="col-start-7 col-span-6">
+                  {% if post.thumbnail %}
+                    {% if post.shapeMask == '1' %}
+                      <figure class="pb-sm md:boxed md:w-[867px] md:h-[695px] figure flex">
+                        <img 
+                          class="lazyload hidden sm:block shape-mask-1" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                        <img 
+                          class="lazyload block sm:hidden" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                      </figure>
+                    {% endif %}
+                  {% endif %}
+                  {% if post.thumbnail %}
+                    {% if post.shapeMask == '2' %}
+                      <figure class="pb-sm md:boxed md:w-[843px] md:h-[605px] figure flex">
+                        <img 
+                          class="lazyload hidden sm:block shape-mask-2" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                        <img 
+                          class="lazyload block sm:hidden" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                      </figure>
+                    {% endif %}
+                  {% endif %}
+                  {% if post.thumbnail %}
+                    {% if post.shapeMask == '3' %}
+                      <figure class="pb-sm md:boxed md:w-[830px] md:h-[608px] figure flex">
+                        <img 
+                          class="lazyload hidden sm:block shape-mask-3" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                        <img 
+                          class="lazyload block sm:hidden" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                      </figure>
+                    {% endif %}
+                  {% endif %}
+                  {% if post.thumbnail %}
+                    {% if post.shapeMask == '4' %}
+                      <figure class="pb-sm md:boxed md:w-[830px] md:h-[603px] figure flex">
+                        <img 
+                          class="lazyload hidden sm:block shape-mask-4" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                        <img 
+                          class="lazyload block sm:hidden" 
+                          src="{{ post.thumbnail.src }}"
+                          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                          data-sizes="auto"
+                          alt="{{ post.title }}">
+                      </figure>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </flynt-component>
+{% endif %}

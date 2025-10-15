@@ -1,0 +1,27 @@
+<flynt-component load:on="visible" name="SliderLogos" class="bg-grey">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="w-full max-w-screen-xl mx-auto boxed">
+    {% if preContentHtml %}
+      <div class="h2">
+        {{ preContentHtml|e('wp_kses_post') }}
+      </div>
+    {% endif %}
+    <div data-ref="slider" class="slider swiper-container w-full h-full mt-lg md:mt-xl">
+      <div class="swiper-wrapper w-full h-full items-center">
+        {% for image in imageFigure %}
+          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+            <figure class="figure w-full h-full relative">
+              <img class="lazyload w-full h-full object-cover relative"
+                src="{{ image.imageImage.src | resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', image.imageImage.id)}}"
+                data-sizes="auto"
+                alt="{{ image.imageImage.alt|e }}">
+            </figure>
+          </div>
+        {% endfor %}
+      </div>
+      <button type="button" data-ref="prev" class="slider-button slider-button--prev"></button>
+      <button type="button" data-ref="next" class="slider-button slider-button--next"></button>
+    </div>
+  </div>
+</flynt-component>
