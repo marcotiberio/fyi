@@ -5,9 +5,9 @@
     "src": "Components/AccordionDefault/script.js"
   },
   "Components/AccordionSystems/script.js": {
-    "file": "assets/script-d6fa32c6.js",
+    "file": "assets/script-423d7804.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
+      "_swiper-bundle.min-c850b03e.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -15,7 +15,7 @@
   },
   "Components/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/linkedin.svg"
+    "src": "Components/NavigationFooter/Assets/facebook.svg"
   },
   "Components/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -23,7 +23,7 @@
   },
   "Components/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/linkedin.svg"
+    "src": "Components/NavigationFooter/Assets/facebook.svg"
   },
   "Components/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -43,9 +43,9 @@
     "src": "Components/BlockPostArchive/script.js"
   },
   "Components/BlockProductSpecs/script.js": {
-    "file": "assets/script-38342870.js",
+    "file": "assets/script-88a4485f.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
+      "_swiper-bundle.min-c850b03e.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -77,20 +77,20 @@
     "src": "Components/HeroImageText/script.js"
   },
   "Components/HeroSlider/script.js": {
-    "file": "assets/script-e423b834.js",
+    "file": "assets/script-57d21135.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/HeroSlider/script.js"
   },
   "Components/HeroSliderComposite/script.js": {
-    "file": "assets/script-107e420c.js",
+    "file": "assets/script-a6f4c702.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -120,7 +120,7 @@
   },
   "Components/NavigationFooter/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/linkedin.svg"
+    "src": "Components/NavigationFooter/Assets/facebook.svg"
   },
   "Components/NavigationFooter/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -132,7 +132,7 @@
   },
   "Components/NavigationFooter/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/linkedin.svg"
+    "src": "Components/NavigationFooter/Assets/facebook.svg"
   },
   "Components/NavigationFooter/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -151,7 +151,7 @@
     "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-413f0cff.js",
+    "file": "assets/script-566aa62a.js",
     "imports": [
       "assets/main.js"
     ],
@@ -159,58 +159,58 @@
     "src": "Components/ScrolltriggerComparison/script.js"
   },
   "Components/SliderBoxToggle/script.js": {
-    "file": "assets/script-f9dc256d.js",
+    "file": "assets/script-80e32c3c.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBoxToggle/script.js"
   },
   "Components/SliderFeatProjects/script.js": {
-    "file": "assets/script-3e711295.js",
+    "file": "assets/script-e56d9c3f.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
+      "_swiper-bundle.min-c850b03e.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderFeatProjects/script.js"
   },
   "Components/SliderHorizontal/script.js": {
-    "file": "assets/script-40b548d0.js",
+    "file": "assets/script-ca399f78.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderHorizontal/script.js"
   },
   "Components/SliderImages/script.js": {
-    "file": "assets/script-67a8196e.js",
+    "file": "assets/script-f8665949.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderImages/script.js"
   },
   "Components/SliderLogos/script.js": {
-    "file": "assets/script-11965de0.js",
+    "file": "assets/script-440d948f.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
+      "_swiper-bundle.min-c850b03e.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderLogos/script.js"
   },
   "Components/SliderPosts/script.js": {
-    "file": "assets/script-1339d081.js",
+    "file": "assets/script-a4530305.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js",
-      "_pagination-5e1f4a20.js",
+      "_swiper-bundle.min-c850b03e.js",
+      "_pagination-d2d31b6d.js",
       "_helpers-0bb72b7a.js",
       "assets/main.js"
     ],
@@ -223,17 +223,17 @@
   "_index-2a8ce3c2.js": {
     "file": "assets/index-2a8ce3c2.js"
   },
-  "_pagination-5e1f4a20.js": {
-    "file": "assets/pagination-5e1f4a20.js",
+  "_pagination-d2d31b6d.js": {
+    "file": "assets/pagination-d2d31b6d.js",
     "imports": [
-      "_swiper-bundle.min-389f72a1.js"
+      "_swiper-bundle.min-c850b03e.js"
     ]
   },
-  "_swiper-bundle.min-389f72a1.js": {
+  "_swiper-bundle.min-c850b03e.js": {
     "css": [
-      "assets/swiper-bundle-68b24500.css"
+      "assets/swiper-bundle-56853baa.css"
     ],
-    "file": "assets/swiper-bundle.min-389f72a1.js"
+    "file": "assets/swiper-bundle.min-c850b03e.js"
   },
   "assets/admin.js": {
     "file": "assets/admin-02f88806.js",
@@ -332,12 +332,12 @@
       "Components/SliderLogos/script.js",
       "Components/SliderPosts/script.js"
     ],
-    "file": "assets/main-451a94cf.js",
+    "file": "assets/main-c60d4350.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-9572ec01.css",
+    "file": "assets/main-f6626a19.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -352,12 +352,12 @@
     "src": "assets/tinyMce.scss"
   },
   "node_modules/@webreflection/custom-elements-builtin/esm/index.js": {
-    "file": "assets/index-1b2afe3b.js",
+    "file": "assets/index-f66bc1a7.js",
     "isDynamicEntry": true,
     "src": "node_modules/@webreflection/custom-elements-builtin/esm/index.js"
   },
   "swiper-bundle.css": {
-    "file": "assets/swiper-bundle-68b24500.css",
+    "file": "assets/swiper-bundle-56853baa.css",
     "src": "swiper-bundle.css"
   }
 }
