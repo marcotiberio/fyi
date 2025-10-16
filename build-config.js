@@ -1,4 +1,4 @@
-const domain = 'immpact.local'
+const domain = 'localhost:10061'
 const dest = './dist'
 
 const host = `https://${domain}`

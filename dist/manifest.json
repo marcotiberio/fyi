@@ -15,7 +15,7 @@
   },
   "Components/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/facebook.svg"
+    "src": "Components/NavigationFooter/Assets/linkedin.svg"
   },
   "Components/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -23,7 +23,7 @@
   },
   "Components/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/facebook.svg"
+    "src": "Components/NavigationFooter/Assets/linkedin.svg"
   },
   "Components/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -120,7 +120,7 @@
   },
   "Components/NavigationFooter/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/facebook.svg"
+    "src": "Components/NavigationFooter/Assets/linkedin.svg"
   },
   "Components/NavigationFooter/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -132,7 +132,7 @@
   },
   "Components/NavigationFooter/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/NavigationFooter/Assets/facebook.svg"
+    "src": "Components/NavigationFooter/Assets/linkedin.svg"
   },
   "Components/NavigationFooter/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -337,7 +337,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-f6626a19.css",
+    "file": "assets/main-8152721f.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

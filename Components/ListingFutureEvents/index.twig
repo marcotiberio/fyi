@@ -68,8 +68,15 @@
                   <span class="font-h3">{{ post.end_date|date("d.m.y")|escape('wp_kses_post') }}</span>
                 </div>
 
-                <div class="col-start-3 col-end-10">
+                <div class="col-start-3 col-end-10 flex flex-row gap-sm items-end">
                   <button @click="toggleEvent()" class="w-fit font-h3" type="button">{{ post.title }}</button>
+                  {% if post.tags %}
+                    <div class="flex flex-col">
+                      {% for tag in post.tags %}
+                        {{ tag.name }}{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
                 </div>
                 <div class="col-start-10 col-end-13 flex flex-row gap-xs justify-end">
                   <button @click="toggleEvent()" class="button button--outline" type="button">Details</button>
