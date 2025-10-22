@@ -27,7 +27,7 @@
   },
   "Components/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/NavigationMain/Assets/logo.svg"
   },
   "Components/BlockCta/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -136,7 +136,7 @@
   },
   "Components/NavigationFooter/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/NavigationMain/Assets/logo.svg"
   },
   "Components/NavigationFooter/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -144,11 +144,11 @@
   },
   "Components/NavigationMain/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/NavigationMain/Assets/logo.svg"
   },
   "Components/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/NavigationMain/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
     "file": "assets/script-566aa62a.js",
@@ -337,7 +337,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-8152721f.css",
+    "file": "assets/main-34394e45.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

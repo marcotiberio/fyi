@@ -32,7 +32,7 @@
       <div class="flex flex-col">
         {% for post in posts %}
           <div 
-            class="post boxed w-full h-full"
+            class="post boxed w-full h-full overflow-hidden"
             {# href="{{ post.link }}" 
             aria-label="{{ post.title }}" #}
             x-data="{ 
@@ -135,15 +135,15 @@
                 <div class="col-start-7 col-span-6">
                   {% if post.thumbnail %}
                     {% if post.shapeMask == '1' %}
-                      <figure class="pb-sm md:boxed md:w-[867px] md:h-[695px] figure flex">
+                      <figure class="pb-sm lg:boxed lgmd:w-[50vw] lg:h-[35vw] figure flex">
                         <img 
-                          class="lazyload block sm:block shape-mask-1" 
+                          class="lazyload hidden lg:block shape-mask-1" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
                           alt="{{ post.title }}">
                         <img 
-                          class="lazyload block sm:hidden" 
+                          class="lazyload block lg:hidden" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
@@ -153,15 +153,15 @@
                   {% endif %}
                   {% if post.thumbnail %}
                     {% if post.shapeMask == '2' %}
-                      <figure class="pb-sm md:boxed md:w-[843px] md:h-[605px] figure flex">
+                      <figure class="pb-sm lg:boxed lg:w-[50vw] lg:h-[35vw] figure flex">
                         <img 
-                          class="lazyload hidden sm:block shape-mask-2" 
+                          class="lazyload hidden lg:block shape-mask-2" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
                           alt="{{ post.title }}">
                         <img 
-                          class="lazyload block sm:hidden" 
+                          class="lazyload block lg:hidden" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
@@ -171,15 +171,15 @@
                   {% endif %}
                   {% if post.thumbnail %}
                     {% if post.shapeMask == '3' %}
-                      <figure class="pb-sm md:boxed md:w-[830px] md:h-[608px] figure flex">
+                      <figure class="pb-sm lg:boxed lg:w-[50vw] lg:h-[35vw] figure flex">
                         <img 
-                          class="lazyload hidden sm:block shape-mask-3" 
+                          class="lazyload hidden lg:block shape-mask-3" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
                           alt="{{ post.title }}">
                         <img 
-                          class="lazyload block sm:hidden" 
+                          class="lazyload block lg:hidden" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
@@ -189,15 +189,15 @@
                   {% endif %}
                   {% if post.thumbnail %}
                     {% if post.shapeMask == '4' %}
-                      <figure class="pb-sm md:boxed md:w-[830px] md:h-[603px] figure flex">
+                      <figure class="pb-sm lg:boxed lg:w-[50vw] lg:h-[35vw] figure flex">
                         <img 
-                          class="lazyload hidden sm:block shape-mask-4" 
+                          class="lazyload hidden lg:block shape-mask-4" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
                           alt="{{ post.title }}">
                         <img 
-                          class="lazyload block sm:hidden" 
+                          class="lazyload block lg:hidden" 
                           src="{{ post.thumbnail.src }}"
                           data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
                           data-sizes="auto"
