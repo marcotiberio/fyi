@@ -23,6 +23,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     // Components\BlockCta\getACFLayout(),
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
+                    Components\BlockStagerOptin\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
                     Components\BlockWysiwygTwoCol\getACFLayout(),
                     // Components\GridImageText\getACFLayout(),

@@ -1,0 +1,32 @@
+flynt-component[name='BlockStagerOptin'] {
+  .form-input {
+    width: 100%;
+    padding: 0.6em 0.8em;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+
+  .form-checkbox {
+    flex-shrink: 0;
+    accent-color: currentColor;
+  }
+
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form[data-state='isLoading'] button[type='submit'] {
+    opacity: 0.5;
+    cursor: wait;
+  }
+
+  .form[data-state='isError'] .form-message {
+    color: var(--red, #c00);
+  }
+}

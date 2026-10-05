@@ -1,0 +1,58 @@
+<flynt-component
+  load:on="visible"
+  name="BlockStagerOptin"
+  class="w-full"
+  style="
+    color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+    background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};"
+  >
+  <div class="boxed flex flex-col gap-md py-md md:py-lg">
+    {% if contentHtml %}
+      <div class="wysiwyg">{{ contentHtml|e('wp_kses_post') }}</div>
+    {% endif %}
+
+    <form
+      data-ref="form"
+      class="form flex flex-col gap-sm max-w-screen-md"
+      action="{{ endpoint }}"
+      method="post"
+      novalidate
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+        <label class="flex flex-col gap-xs">
+          <span>{{ labels.firstname }}</span>
+          <input class="form-input" type="text" name="firstname" autocomplete="given-name" required>
+        </label>
+        <label class="flex flex-col gap-xs">
+          <span>{{ labels.lastname }}</span>
+          <input class="form-input" type="text" name="lastname" autocomplete="family-name" required>
+        </label>
+      </div>
+
+      <label class="flex flex-col gap-xs">
+        <span>{{ labels.email }}</span>
+        <input class="form-input" type="email" name="email" autocomplete="email" required>
+      </label>
+
+      {# Honeypot, hidden from humans. #}
+      <label class="form-honeypot" aria-hidden="true">
+        Website
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </label>
+
+      <label class="flex flex-row items-start gap-xs">
+        <input class="form-checkbox mt-[0.3em]" type="checkbox" name="consent" value="1" required>
+        <span class="wysiwyg">{{ labels.consentHtml|e('wp_kses_post') }}</span>
+      </label>
+
+      <div>
+        <button data-ref="submit" class="button button--grey text-button" type="submit">{{ labels.submit }}</button>
+      </div>
+
+      <p data-ref="message" class="form-message" role="status" aria-live="polite" hidden></p>
+    </form>
+
+    <template data-ref="successMessage">{{ labels.success }}</template>
+    <template data-ref="errorMessage">{{ labels.error }}</template>
+  </div>
+</flynt-component>
