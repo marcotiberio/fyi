@@ -12,6 +12,8 @@ add_filter('Flynt/addComponentData?name=BlockStagerOptin', function ($data) {
     // Never pass credentials to the template.
     unset($data['organization'], $data['token']);
     $data['endpoint'] = rest_url(REST_NAMESPACE . REST_ROUTE);
+    // ACF defaults only apply once the options page is saved, so fill in empty labels.
+    $data['labels'] = array_merge(getDefaultLabels(), array_filter($data['labels'] ?? []));
     return $data;
 });
 
@@ -44,6 +46,19 @@ add_action('rest_api_init', function () {
         ],
     ]);
 });
+
+function getDefaultLabels()
+{
+    return [
+        'firstname' => __('First name', 'flynt'),
+        'lastname' => __('Last name', 'flynt'),
+        'email' => __('Email', 'flynt'),
+        'submit' => __('Subscribe', 'flynt'),
+        'consentHtml' => __('I agree to receive the newsletter and accept the privacy policy.', 'flynt'),
+        'success' => __('Almost done! Check your inbox and click the link to confirm your subscription.', 'flynt'),
+        'error' => __('Something went wrong. Please try again later.', 'flynt'),
+    ];
+}
 
 function getCredentials()
 {
