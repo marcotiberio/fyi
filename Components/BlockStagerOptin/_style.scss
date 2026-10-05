@@ -26,6 +26,10 @@ flynt-component[name='BlockStagerOptin'] {
     cursor: wait;
   }
 
+  .form[data-state='isSuccess'] .form-message {
+    color: var(--success);
+  }
+
   .form[data-state='isError'] .form-message {
     color: var(--red, #c00);
   }

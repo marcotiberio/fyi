@@ -22,6 +22,7 @@ module.exports = {
       yellow: '#f5cc5a',
       blue: '#49a3d5',
       brown: '#a76d61',
+      success: '#3d8550',
       red: '#ff0000',
       grey: '#f9f9f9',
       darkgrey: '#333',
